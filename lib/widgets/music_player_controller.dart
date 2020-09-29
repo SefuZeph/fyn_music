@@ -1,6 +1,5 @@
 import 'dart:math' as math;
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MusicPlayerController extends StatelessWidget {
@@ -16,21 +15,34 @@ class MusicPlayerController extends StatelessWidget {
               ClipPath(
                 clipper: RewindButtonClip(),
                 child: Container(
-                  width: 60,
-                  height: 45,
-                  decoration: BoxDecoration(
-                      color: Colors.black,
+                    width: 60,
+                    height: 45,
+                    decoration: BoxDecoration(
+                      color: Colors.white.withOpacity(0.9),
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(30),
-                          bottomLeft: Radius.circular(30))),
-                ),
+                          bottomLeft: Radius.circular(30)),
+                    ),
+                    child: Icon(
+                      Icons.fast_rewind,
+                    )),
               ),
               Container(
                 width: 70,
                 height: 70,
                 decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Colors.amber,
+                    shape: BoxShape.circle,
+                    color: Colors.black,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey,
+                        offset: Offset(0.0, 1.0), //(x,y)
+                        blurRadius: 6.0,
+                      )
+                    ]),
+                child: Icon(
+                  Icons.play_arrow,
+                  color: Colors.white,
                 ),
               ),
               Transform.rotate(
@@ -38,14 +50,16 @@ class MusicPlayerController extends StatelessWidget {
                 child: ClipPath(
                   clipper: RewindButtonClip(),
                   child: Container(
-                    width: 60,
-                    height: 45,
-                    decoration: BoxDecoration(
-                        color: Colors.black,
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(30),
-                            bottomLeft: Radius.circular(30))),
-                  ),
+                      width: 60,
+                      height: 45,
+                      decoration: BoxDecoration(
+                          color: Colors.white.withOpacity(0.9),
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(30),
+                              bottomLeft: Radius.circular(30))),
+                      child: Icon(
+                        Icons.fast_rewind,
+                      )),
                 ),
               ),
             ],
@@ -74,4 +88,3 @@ class RewindButtonClip extends CustomClipper<Path> {
   @override
   bool shouldReclip(CustomClipper<Path> oldClipper) => false;
 }
-

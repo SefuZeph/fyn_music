@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:fyn_music/constants.dart';
-import 'package:fyn_music/pages/album_list.dart';
 import 'package:fyn_music/pages/music_list.dart';
 
 void main() {

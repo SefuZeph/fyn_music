@@ -15,6 +15,13 @@ class AlbumHeaderImage extends StatelessWidget {
       children: [
         Container(
           decoration: BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey,
+                  offset: Offset(0.0, 1.0), //(x,y)
+                  blurRadius: 6.0,
+                )
+              ],
               color: kBlack,
               borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(200),
@@ -31,7 +38,7 @@ class AlbumHeaderImage extends StatelessWidget {
           ),
         ),
         Positioned(
-          bottom: 40,
+          bottom: 30,
           left: 120,
           child: Text(
             artistName,
